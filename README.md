@@ -15,4 +15,8 @@
  * Created a phoenix server skeleton code.
 	* Key command: **mix phx.new real_deal_api --no-install --app real_deal_api --database postgres --no-live --no-assets --no-html --no-dashboard --no-mailer --binary-id**
 
- * Started up the server and got: "The Real Deal API is LIVE - dev" 
+ * Started up the server and got: "The Real Deal API is LIVE - dev"
+## 3. Using Phoenix Framework to Generate JSON Resources for Elixir REST API Project:
+ * Created schemas for `Accounts` and `Users` -> common key `accounts`:
+   	* mix phx.gen.json Accounts Account accounts email:string hash_password:string
+ 	* mix phx.gen.json Users User users account_id:references:accounts full_name:string gender:string biography:text 
