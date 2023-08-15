@@ -4,3 +4,6 @@
  * Basic get/, returns OK with status 200
  * Created a get/aliens_name, returns Blork Erlang with status 200
  * Created and ran tests
+
+## 1.Spin up a Postgres Docker Container locally:
+ * bs_db created 5500:5432
