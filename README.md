@@ -8,6 +8,7 @@
 ## 1.Spin up a Postgres Docker Container locally:
  * bs_db created 5500:5432
 # Real_Deal_API
+![Real_Deal_API_UML](RDA_UML.png)
 ## 2. Using Phoenix Framework to Create an Elixir REST API Project:
  * Created a simple endpoint get/api.
  * Created real_deal_api_dev database.
