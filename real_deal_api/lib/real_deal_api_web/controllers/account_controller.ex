@@ -26,6 +26,7 @@ defmodule RealDealApiWeb.AccountController do
     case Guardian.autheniticate(email, hash_password) do
       {:ok, account, token} ->
         conn
+        |> Plug.Conn.put_session(:account_id, account.id)
         |> put_status(:ok)
         |> render(:show_signin, %{account: account, token: token})
         {:error, :unauthorised} -> raise ErrorResponse.Unauthorised, message: "Email or Password incorrect."
@@ -33,8 +34,8 @@ defmodule RealDealApiWeb.AccountController do
   end
 
   def show(conn, %{"id" => id}) do
-    account = Accounts.get_account!(id)
-    render(conn, :show, account: account)
+    #account = Accounts.get_account!(id)
+    render(conn, :show, account: conn.assigns.account)
   end
 
   def update(conn, %{"id" => id, "account" => account_params}) do
