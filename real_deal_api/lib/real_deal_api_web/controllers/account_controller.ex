@@ -27,7 +27,7 @@ defmodule RealDealApiWeb.AccountController do
       {:ok, account, token} ->
         conn
         |> put_status(:ok)
-        |> render(:show, %{account: account, token: token})
+        |> render(:show_signin, %{account: account, token: token})
         {:error, :unauthorised} -> raise ErrorResponse.Unauthorised, message: "Email or Password incorrect."
     end
   end
